@@ -93,7 +93,7 @@ print( 'photon energy            : {0:<.2e} ({1:<.2f} eV)'.format( photon_energy
 print( 'EQE                      : {} (%)'.format( EQE*100 ) )
 print( 'Number of electron per A : {}'.format( num_per_Amp ) )
 print( '-------------------------------------------------')
-print( 'cd/A                     : {}'.format( cd_A ) )
+print( 'current efficiency       : {} (cd/A)'.format( cd_A ) )
 print( '' )
 
 
