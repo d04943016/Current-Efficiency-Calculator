@@ -89,7 +89,7 @@ cd_A = num_per_Amp * EQE * photon_energy * pattern_factor * spec_factor # [J] * 
 
 print( 'spectrum factor          : {}'.format( spec_factor ) )
 print( 'pattern factor           : {}'.format( pattern_factor ) )
-print( 'photon energy            : {0:<.2e} ({1:<.2f} eV)'.format( photon_energy, photon_energy/1.602e-19 ) )
+print( 'average photon energy    : {0:<.2e} J ({1:<.2f} eV)'.format( photon_energy, photon_energy/1.602e-19 ) )
 print( 'EQE                      : {} (%)'.format( EQE*100 ) )
 print( 'Number of electron per A : {}'.format( num_per_Amp ) )
 print( '-------------------------------------------------')
