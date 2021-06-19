@@ -60,7 +60,7 @@ Open the command line and go into the directory of cd_A_script.py and EyeRespons
 python ./cd_A_script.py
 ```
 
-Then the terminal would shown the spectrum information, emssion pattern information, and the calculated current efficiency [cd/A]. 
+Then the terminal would show the spectrum information, emssion pattern information, and the calculated current efficiency [cd/A]. 
 
 <p align="center">
 <img src="./Figure/execution.png" width="800">
