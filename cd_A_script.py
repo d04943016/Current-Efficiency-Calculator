@@ -1,8 +1,7 @@
 #!/usr/bin/env python 
+""" Created by Kai on 2021/06/19 """
 
 # import python module
-import os
-import sys
 
 # import third party module
 import numpy as np
@@ -67,8 +66,7 @@ print('-'*60 + '\n')
 
 """ read spectrum """
 print('Now reading eye response (V) from {}'.format(spec_filename) )
-V = pd.DataFrame( readfile(V_filename), columns=['dummy', 'wavelength', 'V']) 
-V.pop('dummy')
+V = pd.DataFrame( readfile(V_filename), columns=['wavelength', 'V']) 
 # print(V)
 
 print('-'*60 + '\n')
