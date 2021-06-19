@@ -2,38 +2,43 @@
 """ Created by Kai on 2021/06/19 """
 
 # import python module
-
+import sys
 # import third party module
 import numpy as np
 import pandas as pd
 
-def readfile(filename):
-    data = []
-    with open(filename) as file:
-        lines = file.readlines()
-        for ii, line in enumerate(lines):
-            tokens = line.split()
-            data.append( [ float(token) for token in tokens ] )
-    return data
-def integration(x, y):
-    x, y = np.array(x), np.array(y)
-    return np.einsum( 'i,i->', x[1:] - x[0:-1], ( y[1:] + y[0:-1] ) / 2 )
 
 """ Data information """
 spec_filename = './Example/spectrum.txt'
 pattern_filename = './Example/pattern.txt'
-V_filename = './EyeResponse.txt' # (Don't modified)
-
-eta_total = 30/100
-IQE = 100/100
-EQE = IQE * eta_total
+EQE = 30/100
 
 """ Constants """
+V_filename = './EyeResponse.txt' # (Don't modified)
 num_per_Amp = 6.241e18
 K = 683.002 # lm/W
 h = 6.62607e-34 # m^2 * kg / s
 c = 3e8 # m/s
 
+""" helpful functions """
+def readfile(filename):
+    data = []
+    try:
+        with open(filename) as file:
+            lines = file.readlines()
+            for ii, line in enumerate(lines):
+                tokens = line.split()
+                if len(tokens)==0:
+                    continue
+                data.append( [ float(token) for token in tokens ] )
+    except:
+        print('Fail to read {}'.format(filename))
+        print('Please check the file.')
+        sys.exit()
+    return data
+def integration(x, y):
+    x, y = np.array(x), np.array(y)
+    return np.einsum( 'i,i->', x[1:] - x[0:-1], ( y[1:] + y[0:-1] ) / 2 )
 
 """ read spectrum """
 print('Now reading emission spectrum from {}'.format(spec_filename) )
@@ -64,7 +69,7 @@ print('    pattern integration factor : {}'.format(pattern_int))
 
 print('-'*60 + '\n')
 
-""" read spectrum """
+""" read luminuous funciton """
 print('Now reading eye response (V) from {}'.format(spec_filename) )
 V = pd.DataFrame( readfile(V_filename), columns=['wavelength', 'V']) 
 # print(V)
