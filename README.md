@@ -3,7 +3,7 @@ This module is used to calculate the current efficiency (cd/A) from the experime
 
 (a) spectrum at normal direction (a.u.)<br/>(b) emission pattern  (a.u.)<br/>(c) external quantum efficiency (EQE)<br/>
 
-This module assumes that the spectrum is the same at different angles. The detailed calculation method, please see method.pdf.
+This module assumes that the spectra are the same at different angles. The detailed calculation method, please see method.pdf.
 
 This module is built by python and two other third-party modules (numpy and pandas). Please install these two modules first.
 
