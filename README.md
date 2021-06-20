@@ -1,4 +1,4 @@
-# current efficiency calculator
+# Current Efficiency Calculator
 This module is used to calculate the current efficiency (cd/A) from the experimental results, including 
 
 (a) spectrum at normal direction (a.u.)<br/>(b) emission pattern  (a.u.)<br/>(c) external quantum efficiency (EQE)<br/>
@@ -65,6 +65,5 @@ Then the terminal would show the spectrum information, emssion pattern informati
 <p align="center">
 <img src="./Figure/execution.png" width="800">
 </p>
-
 
 
